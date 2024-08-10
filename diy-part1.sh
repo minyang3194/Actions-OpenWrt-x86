@@ -27,12 +27,6 @@ echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >
 # git获取sirpdboy源码
 git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 make menuconfig
-
-#添加istore
-echo >> feeds.conf.default
-echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-./scripts/feeds update istore
-./scripts/feeds install -d y -p istore luci-app-store
 # Add passwall
 #echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
 #
