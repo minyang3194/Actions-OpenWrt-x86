@@ -22,13 +22,13 @@ echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.
 echo 'src-git kenzok8 https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 echo 'src-git innmonkey https://github.com/innmonkey/openwrt-packages' >>feeds.conf.default
 #echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
-echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
+#echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
+#echo 'src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
 # git获取sirpdboy源码
 git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 make menuconfig
 # Add passwall
-#echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
+echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
 #
 mkdir -p files/usr/share
 mkdir -p files/etc/
