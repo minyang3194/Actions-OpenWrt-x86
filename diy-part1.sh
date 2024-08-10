@@ -34,7 +34,7 @@ echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.defa
 ./scripts/feeds update istore
 ./scripts/feeds install -d y -p istore luci-app-store
 # Add passwall
-echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
+#echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
 #
 mkdir -p files/usr/share
 mkdir -p files/etc/
