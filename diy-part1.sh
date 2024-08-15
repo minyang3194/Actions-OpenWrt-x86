@@ -64,6 +64,17 @@ wget -qO- $GEOIP_URL > $goe_path/GeoIP.dat
 wget -qO- $GEOSITE_URL > $goe_path/GeoSite.dat
 
 chmod +x $core_path/clash*
+# Docker 容器
+rm -rf ./feeds/luci/applications/luci-app-dockerman
+cp -rf ../dockerman/applications/luci-app-dockerman ./feeds/luci/applications/luci-app-dockerman
+sed -i '/auto_start/d' feeds/luci/applications/luci-app-dockerman/root/etc/uci-defaults/luci-app-dockerman
+pushd feeds/packages
+wget -qO- https://github.com/openwrt/packages/commit/e2e5ee69.patch | patch -p1
+wget -qO- https://github.com/openwrt/packages/pull/20054.patch | patch -p1
+popd
+sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
+rm -rf ./feeds/luci/collections/luci-lib-docker
+cp -rf ../docker_lib/collections/luci-lib-docker ./feeds/luci/collections/luci-lib-docker
 # socat
 cp -rf ../Lienol_pkg/luci-app-socat ./package/new/luci-app-socat
 pushd package/new
