@@ -95,10 +95,10 @@ rm -rf ./package/sirpdboy/luci-app-partexp/po/zh_Hans
 sed -i 's, - !, -o !,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
 sed -i 's,expquit 1 ,#expquit 1 ,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
 # Istore
-echo >> feeds.conf.default
-echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-./scripts/feeds update istore
-./scripts/feeds install -d y -p istore luci-app-store
+#echo >> feeds.conf.default
+#echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+#./scripts/feeds update istore
+#./scripts/feeds install -d y -p istore luci-app-store
 # nas-luci feeds源
 echo >> feeds.conf.default
 echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
