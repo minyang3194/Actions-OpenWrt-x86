@@ -81,18 +81,7 @@ pushd package/new
 wget -qO - https://github.com/Lienol/openwrt-package/pull/39.patch | patch -p1
 popd
 sed -i '/socat\.config/d' feeds/packages/net/socat/Makefile
-# sirpdboy
-mkdir -p package/sirpdboy
-cp -rf ../sirpdboy/luci-app-autotimeset ./package/sirpdboy/luci-app-autotimeset
-sed -i 's,"control","system",g' package/sirpdboy/luci-app-autotimeset/luasrc/controller/autotimeset.lua
-sed -i '/firstchild/d' package/sirpdboy/luci-app-autotimeset/luasrc/controller/autotimeset.lua
-sed -i 's,control,system,g' package/sirpdboy/luci-app-autotimeset/luasrc/view/autotimeset/log.htm
-sed -i '/start()/a \    echo "Service autotimesetrun started!" >/dev/null' package/sirpdboy/luci-app-autotimeset/root/etc/init.d/autotimesetrun
-rm -rf ./package/sirpdboy/luci-app-autotimeset/po/zh_Hans
-cp -rf ../sirpdboy/luci-app-partexp ./package/sirpdboy/luci-app-partexp
-rm -rf ./package/sirpdboy/luci-app-partexp/po/zh_Hans
-sed -i 's, - !, -o !,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
-sed -i 's,expquit 1 ,#expquit 1 ,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
+
 # sirpdboy
 mkdir -p package/sirpdboy
 cp -rf ../sirpdboy/luci-app-autotimeset ./package/sirpdboy/luci-app-autotimeset
