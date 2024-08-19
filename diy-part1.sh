@@ -29,6 +29,7 @@ touch files/usr/share/Lenyu-auto.sh
 # sirpdboy源码
 git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 make menuconfig
+
 # MAC 地址与 IP 绑定
 cp -rf ../immortalwrt_luci/applications/luci-app-arpbind ./feeds/luci/applications/luci-app-arpbind
 ln -sf ../../../feeds/luci/applications/luci-app-arpbind ./package/feeds/luci/luci-app-arpbind
