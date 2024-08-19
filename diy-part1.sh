@@ -46,41 +46,41 @@ cp -rf ../OpenWrt-Add/luci-app-dnsproxy ./package/new/luci-app-dnsproxy
 # OpenClash
 #git clone --single-branch --depth 1 -b master https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
 # 预置Clash内核
-echo -e "预置Clash内核"
-mkdir -p package/luci-app-openclash/root/etc/openclash/core
-core_path="package/luci-app-openclash/root/etc/openclash/core"
-goe_path="package/luci-app-openclash/root/etc/openclash"
+#echo -e "预置Clash内核"
+#mkdir -p package/luci-app-openclash/root/etc/openclash/core
+#core_path="package/luci-app-openclash/root/etc/openclash/core"
+#goe_path="package/luci-app-openclash/root/etc/openclash"
 
-CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-amd64.tar.gz"
-CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium\?ref\=core | grep download_url | grep "amd64" | awk -F '"' '{print $4}' | grep "v3" )
-CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-amd64.tar.gz"
-GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+#CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-amd64.tar.gz"
+#CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium\?ref\=core | grep download_url | grep "amd64" | awk -F '"' '{print $4}' | grep "v3" )
+#CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-amd64.tar.gz"
+#GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+#GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 
-wget -qO- $CLASH_DEV_URL | tar xOvz > $core_path/clash
-wget -qO- $CLASH_TUN_URL | gunzip -c > $core_path/clash_tun
-wget -qO- $CLASH_META_URL | tar xOvz > $core_path/clash_meta
-wget -qO- $GEOIP_URL > $goe_path/GeoIP.dat
-wget -qO- $GEOSITE_URL > $goe_path/GeoSite.dat
+#wget -qO- $CLASH_DEV_URL | tar xOvz > $core_path/clash
+#wget -qO- $CLASH_TUN_URL | gunzip -c > $core_path/clash_tun
+#wget -qO- $CLASH_META_URL | tar xOvz > $core_path/clash_meta
+#wget -qO- $GEOIP_URL > $goe_path/GeoIP.dat
+#wget -qO- $GEOSITE_URL > $goe_path/GeoSite.dat
 
-chmod +x $core_path/clash*
+#chmod +x $core_path/clash*
 # Docker 容器
-rm -rf ./feeds/luci/applications/luci-app-dockerman
-cp -rf ../dockerman/applications/luci-app-dockerman ./feeds/luci/applications/luci-app-dockerman
-sed -i '/auto_start/d' feeds/luci/applications/luci-app-dockerman/root/etc/uci-defaults/luci-app-dockerman
-pushd feeds/packages
-wget -qO- https://github.com/openwrt/packages/commit/e2e5ee69.patch | patch -p1
-wget -qO- https://github.com/openwrt/packages/pull/20054.patch | patch -p1
-popd
-sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
-rm -rf ./feeds/luci/collections/luci-lib-docker
-cp -rf ../docker_lib/collections/luci-lib-docker ./feeds/luci/collections/luci-lib-docker
+#rm -rf ./feeds/luci/applications/luci-app-dockerman
+#cp -rf ../dockerman/applications/luci-app-dockerman ./feeds/luci/applications/luci-app-dockerman
+#sed -i '/auto_start/d' feeds/luci/applications/luci-app-dockerman/root/etc/uci-defaults/luci-app-dockerman
+#pushd feeds/packages
+#wget -qO- https://github.com/openwrt/packages/commit/e2e5ee69.patch | patch -p1
+#wget -qO- https://github.com/openwrt/packages/pull/20054.patch | patch -p1
+#popd
+#sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
+#rm -rf ./feeds/luci/collections/luci-lib-docker
+#cp -rf ../docker_lib/collections/luci-lib-docker ./feeds/luci/collections/luci-lib-docker
 # socat
-cp -rf ../Lienol_pkg/luci-app-socat ./package/new/luci-app-socat
-pushd package/new
-wget -qO - https://github.com/Lienol/openwrt-package/pull/39.patch | patch -p1
-popd
-sed -i '/socat\.config/d' feeds/packages/net/socat/Makefile
+#cp -rf ../Lienol_pkg/luci-app-socat ./package/new/luci-app-socat
+#pushd package/new
+#wget -qO - https://github.com/Lienol/openwrt-package/pull/39.patch | patch -p1
+#popd
+#sed -i '/socat\.config/d' feeds/packages/net/socat/Makefile
 
 # sirpdboy
 mkdir -p package/sirpdboy
