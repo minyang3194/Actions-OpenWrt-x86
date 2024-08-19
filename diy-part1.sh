@@ -94,6 +94,8 @@ cp -rf ../sirpdboy/luci-app-partexp ./package/sirpdboy/luci-app-partexp
 rm -rf ./package/sirpdboy/luci-app-partexp/po/zh_Hans
 sed -i 's, - !, -o !,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
 sed -i 's,expquit 1 ,#expquit 1 ,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
+
+
 # Istore
 #echo >> feeds.conf.default
 #echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
