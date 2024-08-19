@@ -119,12 +119,12 @@ jobs:
     - name: luci-app-advanced
       run: |
         cd openwrt/package
-        git clone -b dev https://github.com/sirpdboy/luci-app-advanced.git
+        git clone https://github.com/sirpdboy/luci-app-advanced
 
     - name: luci-app-autotimeset
       run: |
         cd openwrt/package
-        git clone -b dev https://github.com/sirpdboy/luci-app-autotimeset
+        git clone https://github.com/sirpdboy/luci-app-autotimeset
         
    # - name: aliyundrive-webdav
    #   run: |
