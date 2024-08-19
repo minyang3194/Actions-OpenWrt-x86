@@ -129,7 +129,7 @@ jobs:
     - name: luci-app-fileassistant
       run: |
         cd openwrt/package
-        git clone https://github.com/sirpdboy/sirpdboy-package/tree/main/luci-app-fileassistant.git    
+        git clone https://github.com/sirpdboy/sirpdboy-package/tree/main/luci-app-fileassistant.git   
         
    # - name: aliyundrive-webdav
    #   run: |
