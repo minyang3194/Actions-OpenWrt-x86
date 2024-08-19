@@ -96,6 +96,11 @@ rm -rf ./package/sirpdboy/luci-app-partexp/po/zh_Hans
 sed -i 's, - !, -o !,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
 sed -i 's,expquit 1 ,#expquit 1 ,g' package/sirpdboy/luci-app-partexp/root/etc/init.d/partexp
 
+# sirpdboy autotimeset
+src-git autotimeset  https://github.com/sirpdboy/luci-app-autotimeset
+scripts/feeds update autotimeset
+scripts/feeds install luci-app-autotimeset
+make package/luci-app-autotimeset/compile V=s
 
 # Istore
 #echo >> feeds.conf.default
