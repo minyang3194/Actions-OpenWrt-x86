@@ -119,7 +119,7 @@ jobs:
     - name: luci-app-advanced
       run: |
         cd openwrt/package
-        git clone -b dev https://github.com/sirpdboy/luci-app-advanced
+        git clone -b dev https://github.com/sirpdboy/luci-app-advanced.git
 
     - name: luci-app-autotimeset
       run: |
