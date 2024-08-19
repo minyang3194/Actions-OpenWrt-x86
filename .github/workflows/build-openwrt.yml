@@ -114,7 +114,7 @@ jobs:
     - name: luci-theme-design
       run: |
         cd openwrt/package 		
-        git clone -b dev git clone https://github.com/gngpp/luci-theme-design.git luci-theme-design
+        git clone https://github.com/gngpp/luci-theme-design.git luci-theme-design
 
     - name: luci-app-advanced
       run: |
