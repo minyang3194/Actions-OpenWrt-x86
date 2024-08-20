@@ -129,7 +129,7 @@ jobs:
     - name: luci-app-ddns
       run: |
         cd openwrt/package
-        git clone https://github.com/QiuSimons/luci-1/tree/master/applications/luci-app-ddns
+        git clone https://github.com/QiuSimons/luci-1/tree/master/applications/luci-app-ddns.git
         
    # - name: aliyundrive-webdav
    #   run: |
