@@ -124,7 +124,12 @@ jobs:
     - name: luci-app-autotimeset
       run: |
         cd openwrt/package
-        git clone https://github.com/sirpdboy/luci-app-autotimeset  
+        git clone https://github.com/sirpdboy/luci-app-autotimeset
+
+    - name: luci-app-autotimeset
+      run: |
+        cd openwrt/package
+        git clone https://github.com/QiuSimons/luci-1/tree/master/applications/luci-app-ddns
         
    # - name: aliyundrive-webdav
    #   run: |
